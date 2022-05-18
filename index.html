@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML- Web Form</title>
+
+    <!-- Bagian CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- main start -->
+    <div class="main">
+        <h2>Survey Kepuasan Pelanggan</h2>
+
+        <!-- main-konten start -->
+        <div class="main-konten">
+
+            <!-- Form Start -->
+            <form action="#">
+
+                <!-- Name start -->
+                <div>
+                    <div class="left-div">
+                        <h4>Nama</h4>
+                    </div>
+    
+                    <div class="right-div">
+                        <input type="text" name="nama" id="nama" autocomplete="off" autofocus placeholder="Masukkan Nama">
+                    </div>
+                </div>
+                <!-- Name End -->
+
+                <!-- Age Start -->
+                <div>
+                    <div class="left-div">
+                        <h4>Umur</h4>
+                    </div>
+    
+                    <div class="right-div">
+                        <input type="text" name="umur" id="umur" autocomplete="off" placeholder="Masukkan Umur">
+                    </div>
+                </div>
+                <!-- Age End -->
+
+                <!-- Bagian Jenis Kelamin -->
+                <div class="kl">
+
+                    <div class="left-div">
+                        <h4 >Jenis Kelamin</h4>
+                    </div>
+                    <br>
+                    <div class="left-div">
+                        <input type="radio" name="jeniskelamin" id="jeniskelamin" value="laki-laki">Laki-laki <br>
+                        <input type="radio" name="jeniskelamin" id="jeniskelamin" value="perempuan">Perempuan
+                    </div>
+                    <br>
+                    <div class="left-div2">
+                        <h4>Nilai Kepuasan (1-5)</h4>
+                        
+                    </div>
+                    <div class="box">
+                        <select name="opsi" id="opsi" >
+                            <option name="opsi" id="opsi" value="0">Select an option&hellip;</option>
+                            <option name="opsi" id="opsi" value="1">1</option>
+                            <option name="opsi" id="opsi" value="2">2</option>
+                            <option name="opsi" id="opsi" value="3">3</option>
+                            <option name="opsi" id="opsi" value="4">4</option>
+                            <option name="opsi" id="opsi" value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Jenis Kelamin End -->
+                    
+                <div class="survey">
+                    <label>Darimana anda Mengetahui produk kami</label>
+                    <p></p>
+
+                    <input type="checkbox" name="via" id="via" value="Sosial Media">Sosil Media
+                    <input type="checkbox" name="via" id="via" value="Teman">Teman
+                    <input type="checkbox" name="via" id="via" value="Internet">Internet
+    
+                    <p>Apakah anda Menggunakan Layanan kami</p>
+                    <input type="radio" name="layanan" id="layanan" value="Ya">Ya
+                    
+                    <input type="radio" name="layanan" id="layanan" value="Tidak">Tidak
+
+                    <p>Kritik dan Saran</p>
+                    <textarea name="kritik" id="kritik" cols="30" rows="5"></textarea>
+                    
+                    <div class="btn-krm">
+                        <input type="submit" value="kirim" onclick="tampilData()">
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+            </form>
+            <!-- Form End -->
+
+        </div>
+        <!-- main-konten End -->
+
+    </div>
+    <!-- main End -->
+
+    <script src="script.js"></script>
+
+    <script>
+        function tampilData(){
+            var nama = document.getElementById("nama").value;
+            var umur = document.getElementById("umur").value;
+            var kritik =  document.getElementById("kritik").value;
+            var jeniskelamin = document.querySelector("input[name=jeniskelamin]:checked").value;
+            var produk = document.getElementsByName("via");
+            var opsi = document.getElementById("opsi");
+            var layanan = document.querySelector("input[name=layanan]:checked").value;
+            
+
+            var daftarProduk='';
+
+            for(var produk2 of produk){
+                if(produk2.checked){
+                    daftarProduk += ', ' + produk2.value;
+                }
+            }
+            daftarProduk =  daftarProduk.substring(1)
+            // var hobi = document.getElementsByName("hobi");
+            // var daftarHobi= '';
+
+            // for(var hobi2 of hobi){
+            //     if(hobi2.checked){
+            //         daftarHobi += ', ' + hobi2.value
+            //     }
+                
+            // }
+
+            // daftarHobi = daftarHobi.substring(1)
+
+            alert(
+                "Terima kasih Telah mengisi Survey Kepuasan😊" +
+                "Jawaban Anda Telah direkam : " +
+                
+                "\nNama            : " + nama +
+                "\nUmur            : " + umur +
+                "\nJenisKelamin : " + jeniskelamin +
+                "\nProduk          : " + daftarProduk+
+                "\nKepuasan      : " + opsi.options[opsi.selectedIndex].value +
+                "\nLayanan        : " + layanan +
+                "\nKritik             : " + kritik
+            );
+        }
+    </script>
+
+</body>
+</html>

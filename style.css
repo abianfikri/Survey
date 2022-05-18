@@ -1,0 +1,99 @@
+body{
+    background-color: #BBDED6;
+}
+
+.main{
+    border: 6px solid rgba(5, 98, 175, 0.507) ;
+    height: 735px;
+    width: 600px;
+    margin: 0px auto;
+    background-color: #7fa30696
+}
+
+.main-konten{
+    height: 100px;
+}
+
+.main h2{
+    text-align: center;
+    padding: 20px;
+}
+
+.left-div{
+    padding: 0px 30px;
+    width: 150px;
+    display: inline-block;
+}
+
+.left-div2{
+    padding: 0px 30px;
+    width: 255px;
+    display: inline-block;
+}
+
+.right-div{
+    padding: 5px 30px;
+    display: inline-block;
+}
+
+.right-div input{
+    width: 150px;
+    color: black;
+}
+
+.kl{
+    background-color: #b5e12396;
+}
+
+::placeholder{
+    color: brown;
+}
+
+.box {
+    position: absolute;
+    top: 49%;
+    padding: 5px 10px;
+    display: inline-block;
+    transform: translate(-50%, -50%);
+  }
+
+  .box select {
+    background-color: #05af9b;
+    color: white;
+    padding: 7px;
+    border: none;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+  }
+
+.survey {
+    padding: 0px 30px;
+    background-color: #b5e12396;
+    height: 350px;
+    
+}
+
+textarea{
+    resize: none;
+}
+
+.btn-krm{
+    padding: 20px 10px;
+    margin: 8px auto;
+    width: 100px;
+   
+}
+
+.btn-krm input{
+    background-color: rgb(178, 16, 35);
+    color: aqua;
+    box-shadow: 90px salmon;
+    width: 100px;
+    height: 30px;
+}
+
+.btn-krm input:hover{
+    background-color: rgb(212, 181, 27);
+}
